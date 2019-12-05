@@ -7,5 +7,5 @@ spec:
   releaseName: redis
   chart:
     repository: https://charts.bitnami.com/bitnami
-    name: bitnami/influxdb
+    name: influxdb
     version: 0.2.4
