@@ -4,7 +4,7 @@ metadata:
   name: influxdb
   namespace: default
 spec:
-  releaseName: redis
+  releaseName: influxdb
   chart:
     repository: https://charts.bitnami.com/bitnami
     name: influxdb
