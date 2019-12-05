@@ -45,7 +45,7 @@ data:
         #fielddrop = ["metric_to_drop"]
 
         # An array of urls to scrape metrics from.
-        # urls = ["http://myurl:9101/metrics"]
+        urls = ["http://nginx-nginx-ingress-controller-metrics.kube-system.svc:9913/metrics"]
 
         # An array of Kubernetes services to scrape metrics from.
         # kubernetes_services = ["http://my-service-dns.my-namespace:9102/metrics"]
@@ -72,7 +72,7 @@ data:
         ## Uncomment the following settings with valid string arrays for prometheus scraping
 
         # An array of urls to scrape metrics from. $NODE_IP (all upper case) will substitute of running Node's IP address
-        urls = ["http://nginx-nginx-ingress-controller-metrics.kube-system.svc:9913/metrics"]
+        # urls = ["http://nginx-nginx-ingress-controller-metrics.kube-system.svc:9913/metrics"]
 
         #fieldpass = ["metric_to_pass1", "metric_to_pass12"]
 
