@@ -1,0 +1,11 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: influxdb
+  namespace: default
+spec:
+  releaseName: redis
+  chart:
+    repository: https://charts.bitnami.com/bitnami
+    name: bitnami/influxdb
+    version: 0.2.4
