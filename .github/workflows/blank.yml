@@ -18,6 +18,5 @@ jobs:
         helmv3: 3.0.0
         command: |
           echo "Run kubeval"
-          ls -l
-          #kubeval -d . --strict
+          kubeval -d . --strict
         
