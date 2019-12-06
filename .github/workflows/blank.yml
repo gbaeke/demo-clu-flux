@@ -1,0 +1,22 @@
+name: ValidateYaml
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Kubeval
+      uses: stefanprodan/kube-tools@v1.2.0
+      with:
+        kubectl: 1.16.2
+        kustomize: 3.4.0
+        helm: 2.16.1
+        helmv3: 3.0.0
+        command: |
+          echo "Run kubeval"
+          kubeval *.yaml -d . --strict --ignore-missing-schemas
+        
