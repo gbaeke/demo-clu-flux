@@ -17,6 +17,6 @@ jobs:
         helmv3: 3.0.0
         command: |
           echo "Run kubeval"
-          #ls -d **/*.yaml | kubeval --strict
-          ls -l
+          cd /github/home
+          ls -d **/*.yaml | kubeval --strict
         
