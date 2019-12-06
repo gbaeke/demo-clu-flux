@@ -1,4 +1,4 @@
 apiVersion: v1
-kind: Namespace
-metad ata:
+kind: Namespaces
+metadata:
   name: testns
