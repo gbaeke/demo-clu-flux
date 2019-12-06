@@ -1,4 +1,4 @@
-name: CI
+name: ValidateYaml
 
 on: [push]
 
@@ -18,5 +18,5 @@ jobs:
         helmv3: 3.0.0
         command: |
           echo "Run kubeval"
-          kubeval -d . --strict
+          kubeval -d . --strict --ignore-missing-schemas
         
