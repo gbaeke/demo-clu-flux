@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-<<<<<<< HEAD
-  name: testns2
-=======
-  name: errorns
->>>>>>> 506dd5dce3f9085cbdab2f3bb25957f8b040cc8d
