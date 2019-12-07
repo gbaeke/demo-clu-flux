@@ -1,4 +1,4 @@
 apiVersion: v1
 kind: Namespaces
 metadata:
-  name: testns
+  name: errorns
