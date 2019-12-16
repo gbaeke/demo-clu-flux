@@ -1,0 +1,67 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: iotfunc
+  namespace: default
+spec:
+  encryptedData:
+    AzureWebJobsStorage: AgB5X9uvhAYSs/2l38o/K8e3L3bA1ve5ntr+gQ41tGc1gXJ1atJV+LS5M0MMCE0z4fAVcMUG/szPSxgldeMDKF9tHC2mjsnArWufbSPHPrq7/7k9LxXh9OiggV1wynvQeicYR1VqyNRuSWHT5Uvm+ncz6lSOlaigF25NWj9/ROlGbpAIaq5T/wtoBy5nMItGL1o7M5hHW3eA9qKIjTjzBoMh82xEhYK46iXqdPrFDbKFASlnOeui2rdFo7Q+EArmCjqccMuVBWFVJK3ygy2jyjIf8sztXP9fOfoUF1p3DXFYh1N0Fpx/Jb5OJhGbbV1oMfxvZDtzp37hGqz/Dyl4L80SjvgqdFUo5wc9aJLKQNaXtIed1eNvk0BGsr3RMD+tzfWZBQbY+NECiIae64kAxOLHrvgVcxJktV2ZZFbNAheKMGR9z8kl3/59Tf28iTuvZoL5i5YWYFV+7NmB3PmEA11GkUrTOZVenHZDdomHp3/iYwfIVedyBvQI2tDwHlLh2ugQBSUCA3QcSO1RsJwGtxm5UAu1AHrWMiOX0Wi/KHiUfq+JsV17CnKl1/I3jBmNsfE3pcowO5wovYR3BrVKAU9sLOY8ixu6ypX6/pnhlLpiBv2J9y4Ggb/nF+UD93XEH+5yX+iER48gPO8Ld2vLy7+y50xtrazUH0C2GwNRFhwQuqs/SEBMtAJrG/uB3BuLSmI4nANgYxjmTTN7eK5cOjZXWSDD5RVHBAcaYdEDfMMulRdJOcrTSbXXluBihH5K+bB6pAJn3gOAvYQjop82m0mvMvfo90ghhQsa76APD0nGFpfmXjDXJRUmIJpnDBrK/pzGR9g33ynhhEkyzPsezumU2XGWsRd4rCBaBk4pXAxEAm4eYDWM/fIUqmcUdeyTQZ1H8gse4SFTAflmGTj6QENocKChb4f8NQoQ7XJWdVT0w5hmhYnbDnw5h19w43fN98UpSHQExY4=
+    EventEndpoint: AgCEp2s5HGpJFZze5q/LI6Sh5XcYraGyJId2l9JZuvqMzIU5TR0McPhxdJQBDK7YV4LEp/+ZfKGLcWImZfJyBABkxCDMvPTlEQ4LzQ3VHXxUIpX84fOMYocrckf7XRX15exhIej3c+Gq3Ag1kef3qa2Zcz31pGQNH0LZcecMbyOV5AcAxZhEUriQRnxlEkWEAj9KiXvIg8PF0MvqBefDJBgh9pSXjRo8AsrtcGz7nRq5nzl2Tgt/9Jm5rEfO6yHDbKS+adWrxes+bprfFyygumVKRETRbBc87Ngzj1mErHHpekzsSTfLG1gdTnoYXAAk5C1x3KrIRmHINazWurBr+HTSiw3LmV/ui29mk9tvevP2BgkCPRhh+xu0d+8l2pnk8QNwLAoE5sd7mVQmEQUlPeheJax3SgUgWVZCVR8QiO6EoHsXDmNKwjbQj3iZiD+9Ja18acCv9XccKzOosLFbdWei4DyyViBPymVPwbbbRZrULPswcvIR2jpHyeNxtZ+82S6MwU5yPTKz9aChToBSmEotNNWhBf0idx6g4VyuCaF2vQ3aP3Gkm26Az2u1g+IShOXn/S0MarIFFSOgd+BR7B41BkmsryoPk6MF1u4HiUXy1CWE99UNe+gdZetJ16Fvg3QnMvRyX6akr2WBgFS4rXysCeNyTd/XV99MfuC/Ys6mAcVEsO6bq0XJNwTc2TO8kVLwEsIPtQSVjfJN6PDfHF93JNgf4cJ0SLTz7i0cLBEx2h/du++4NFFamHO1QLK8eEBW/1G+mgGVaMXAMj5beQObDTo+1a5DD7dbKSnmv9r6dnipFv/U8OjSosdjWug3j+hOH1mveui1Tt5t9bzxUhzbNHJg/61gIesQw6J/wqfs7LG6yvlcZildvBN2FbZrZ6aLnDRcTFYS3lWVgkl4OxeLSt1Y5mLyzhHl6Rq6t85bbAqBkBLcl1SkhhkO1FtT75i+
+    FUNCTIONS_WORKER_RUNTIME: AgAHQAE01gzCThtDOR7oC8CGbROvC/MtOrWO6uFMEOGovpkY0wIdpfXBfYxBSDm5PyjsgAIySQvRS/DgI1kXl+9gmVdFRjiw8PDHRw7/J4uTol5V8DEeNKX8HYmIRu9UGsyItXuefQls8tSFtBiO057Ioxbr1jlDL4Kh7qtN49/7I6/3HMG5i9lOzjNIa0iy6m+ZRL1wJj+uv03CKverXVvD/HBXY8dPCRWWKnjiDkqod7SpKqR6B/NJh3yUncnMdjc/l8GQWxJlNlRPIWHFltCTtyjHpC6ZJRN+6IHo30AJU/aRuI3/yZZ/Q/1Nn14U0HY09wny+cP2NVa6HhxAYVzNGWpBaExjzSM3r67HXo5b5IrfgmCK0IbTdO8uKB21xsrAmztx1UyDgiWZttxBVaRYEvRoyf163yzzd5Ns6xnOH9xAepkX92qfvJ7Tt/tk3m3S9SsovlRDCKOUQyrpd89D3GsN194Eh7RyGVi0dn3SJ96qST0i8C+Plw6H/E2RIpy8hplKBS2PUSFxG/ALdnJSwy8sOfk8Bbo5i5OvihH6I041Xc5RYLdHgPPJw8Ols/9NBNeV7T7jf/x7d5QZ2+79nFvWELswTWjYgdSrS/Vn+Vzyt61dQEIJz9HFCQykqjxNkLPGDN82tHCML0qNI4/k6FRY+z71uBeKIyyusOw12LEQsjFnGcYbkGwp7BlByPXjdiRw
+  template:
+    metadata:
+      creationTimestamp: null
+      name: iotfunc
+      namespace: default
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iotfunc
+  namespace: default
+  labels:
+    app: iotfunc
+spec:
+  selector:
+    matchLabels:
+      app: iotfunc
+  template:
+    metadata:
+      labels:
+        app: iotfunc
+    spec:
+      containers:
+      - name: iotfunc
+        image: gbaeke/iotfunc:0.0.1
+        env:
+        - name: AzureFunctionsJobHost__functions__0
+          value: ProcessEvents
+        envFrom:
+        - secretRef:
+            name: iotfunc
+---
+apiVersion: keda.k8s.io/v1alpha1
+kind: ScaledObject
+metadata:
+  name: iotfunc
+  namespace: default
+  labels:
+    deploymentName: iotfunc
+spec:
+  scaleTargetRef:
+    deploymentName: iotfunc
+  minReplicaCount: 0
+  maxReplicaCount: 10
+  triggers:
+  - type: azure-eventhub
+    metadata:
+      type: eventHubTrigger
+      name: eventHubMessages
+      direction: in
+      eventHubName: gebahub-big
+      connection: EventEndpoint
+      cardinality: many
+      consumerGroup: keda
+---
+
