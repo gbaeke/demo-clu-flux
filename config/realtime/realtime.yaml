@@ -47,6 +47,7 @@ metadata:
   annotations:
     fluxcd.io/automated: 'true'
     fluxcd.io/tag.realtime: semver:~1
+    fluxcd.io/locked: 'true'
 spec:
   selector:
     matchLabels:
