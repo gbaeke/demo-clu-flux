@@ -44,6 +44,9 @@ metadata:
   name: realtime
   labels:
     app: realtime
+  annotations:
+    fluxcd.io/automated: 'true'
+    fluxcd.io/tag.realtime: semver:~1
 spec:
   selector:
     matchLabels:
