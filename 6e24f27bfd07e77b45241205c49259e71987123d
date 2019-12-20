@@ -1,0 +1,1 @@
+{"jobID":"a748246d-d87d-bba1-d740-2bd32b83e668","spec":{"type":"policy","cause":{"Message":"","User":""},"spec":{"default:deployment/realtime":{"add":{"automated":"true","tag.fluxapp":"glob:1.*"},"remove":{}}}},"result":null}
