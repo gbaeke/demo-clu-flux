@@ -47,7 +47,6 @@ metadata:
   annotations:
     fluxcd.io/automated: 'true'
     fluxcd.io/tag.fluxapp: glob:1.*
-    fluxcd.io/locked: 'true'
 spec:
   selector:
     matchLabels:
