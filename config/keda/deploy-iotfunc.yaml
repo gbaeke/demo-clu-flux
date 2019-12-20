@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iotfunc
+  namespace: default
+  labels:
+    app: iotfunc
+spec:
+  selector:
+    matchLabels:
+      app: iotfunc
+  template:
+    metadata:
+      labels:
+        app: iotfunc
+    spec:
+      containers:
+      - name: iotfunc
+        image: docker.io/gbaeke/iotfunc:0.0.1
+        env:
+        - name: AzureFunctionsJobHost__functions__0
+          value: ProcessEvents
+        - name: FUNCTIONS_WORKER_RUNTIME
+          value: node
+        - name: EventEndpoint
+          valueFrom:
+            secretKeyRef:
+              name: kedasample-event
+              key: EventEndpoint
+        - name: AzureWebJobsStorage
+          valueFrom:
+            secretKeyRef:
+              name: kedasample-storage
+              key: AzureWebJobsStorage
+---
+apiVersion: keda.k8s.io/v1alpha1
+kind: ScaledObject
+metadata:
+  name: iotfunc
+  namespace: default
+  labels:
+    deploymentName: iotfunc
+spec:
+  scaleTargetRef:
+    deploymentName: iotfunc
+  minReplicaCount: 0
+  maxReplicaCount: 10
+  triggers:
+  - type: azure-eventhub
+    metadata:
+      type: eventHubTrigger
+      name: eventHubMessages
+      direction: in
+      eventHubName: gebahub-big
+      connection: EventEndpoint
+      cardinality: many
+      consumerGroup: keda
+
