@@ -44,8 +44,6 @@ metadata:
   name: realtime
   labels:
     app: realtime
-  annotations:
-    fluxcd.io/tag.fluxapp: glob:1.*
 spec:
   selector:
     matchLabels:
@@ -58,7 +56,7 @@ spec:
     spec:
       containers:
       - name: realtime
-        image: gbaeke/fluxapp:1.0.1
+        image: gbaeke/fluxapp:1.0.0
         env:
         - name: REDISHOST
           value: "redis:6379"
