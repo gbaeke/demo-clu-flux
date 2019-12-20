@@ -47,7 +47,7 @@ metadata:
   annotations:
     fluxcd.io/tag.fluxapp: glob:1.0.*
     fluxcd.io/automated: 'true'
-    fluxcd.io/tag.realtime: glob:1.0.*
+    fluxcd.io/tag.realtime: glob:~1.0
 spec:
   selector:
     matchLabels:
