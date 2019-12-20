@@ -1,0 +1,1 @@
+{"jobID":"fb2f135b-14c3-3639-7b97-3ffc77ad6f31","spec":{"type":"policy","cause":{"Message":"","User":""},"spec":{"default:deployment/realtime":{"add":{},"remove":{"automated":"true"}}}},"result":null}
