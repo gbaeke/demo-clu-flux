@@ -62,7 +62,7 @@ spec:
         image: gbaeke/fluxapp:1.0.5
         env:
         - name: REDISHOST
-          value: "redis:6379"
+          value: "redisapp:6379"
         resources:
           requests:
             cpu: 25m
