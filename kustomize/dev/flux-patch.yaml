@@ -2,12 +2,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app: realtime
-  name: realtime
   annotations:
     flux.weave.works/automated: "true"
     flux.weave.works/tag.realtime: semver:~1
+  name: realtime
   namespace: realtime-dev
 spec:
   template:
@@ -15,15 +13,12 @@ spec:
       $setElementOrder/containers:
       - name: realtime
       containers:
-      - image: gbaeke/fluxapp:1.0.5
+      - image: gbaeke/fluxapp:1.0.6
         name: realtime
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-prod
-    kubernetes.io/ingress.class: nginx
   name: realtime-ingress
   namespace: realtime-dev
 spec:
