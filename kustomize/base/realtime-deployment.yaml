@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: realtime
+  labels:
+    app: realtime
+spec:
+  selector:
+    matchLabels:
+      app: realtime
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: realtime
+    spec:
+      containers:
+      - name: realtime
+        image: gbaeke/fluxapp:1.0.5
+        env:
+        - name: REDISHOST
+          value: "redis:6379"
+        resources:
+          requests:
+            cpu: 25m
+            memory: 50Mi
+          limits:
+            cpu: 150m
+            memory: 150Mi
+        ports:
+        - containerPort: 8080
