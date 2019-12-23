@@ -11,7 +11,6 @@ metadata:
 spec:
   template:
     spec:
-      $setElementOrder/containers:
       - name: realtime
       containers:
         image: gbaeke/fluxapp:1.0.5
