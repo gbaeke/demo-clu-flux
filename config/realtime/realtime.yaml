@@ -41,12 +41,12 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: realtime
+  name: realtimeapp
   labels:
     app: realtime
   annotations:
     fluxcd.io/automated: 'true'
-    fluxcd.io/tag.realtime: semver:~1
+    fluxcd.io/tag.realtimeapp: semver:~1
 spec:
   selector:
     matchLabels:
@@ -58,7 +58,7 @@ spec:
         app: realtime
     spec:
       containers:
-      - name: realtime
+      - name: realtimeapp
         image: gbaeke/fluxapp:1.0.5
         env:
         - name: REDISHOST
@@ -76,7 +76,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: realtime
+  name: realtimeapp
   labels:
     app: realtime
 spec:
