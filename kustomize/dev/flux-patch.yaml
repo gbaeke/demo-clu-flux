@@ -6,6 +6,7 @@ metadata:
         flux.weave.works/automated: "true"
         flux.weave.works/tag.realtime: semver:~1
     name: realtime
+    namespace: realtime-dev
 spec:
     template:
     spec:
