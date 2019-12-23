@@ -1,17 +1,18 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    app: realtime
+  name: realtime
   annotations:
     flux.weave.works/automated: "true"
     flux.weave.works/tag.realtime: semver:~1
-  name: realtime
   namespace: realtime-dev
 spec:
   template:
-  spec:
-    $setElementOrder/containers:
-    - name: realtime
+    spec:
+      $setElementOrder/containers:
+      - name: realtime
       containers:
-    - image: gbaeke/realtime:1.0.5
-      name: realtime
+        image: gbaeke/fluxapp:1.0.5
+        name: realtime
