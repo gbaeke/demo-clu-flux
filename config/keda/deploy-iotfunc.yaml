@@ -51,7 +51,7 @@ spec:
       type: eventHubTrigger
       name: eventHubMessages
       direction: in
-      eventHubName: gebahub-big
+      eventHubName: gebahub
       connection: EventEndpoint
       cardinality: many
       consumerGroup: keda
