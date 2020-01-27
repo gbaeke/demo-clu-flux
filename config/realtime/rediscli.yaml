@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rediscli-pod
+  labels:
+    app: rediscli
+spec:
+  containers:
+  - name: rediscli
+    image: goodsmileduck/redis-cli
+    command: ['sh', '-c', 'while true;do redis-cli -h redisapp publish device01 "Hello at $(date +%r)";sleep 1;done']
