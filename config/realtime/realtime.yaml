@@ -51,7 +51,7 @@ spec:
   selector:
     matchLabels:
       app: realtime
-  replicas: Z
+  replicas: 2
   template:
     metadata:
       labels:
