@@ -1,0 +1,16 @@
+apiVersion: spv.no/v1alpha1
+kind: AzureKeyVaultSecret
+metadata:
+  name: kubeview
+  namespace: default
+spec:
+  vault:
+    name: gebakv
+    object:
+      name: kubeview
+      type: secret
+  output:
+    secret: 
+      name: kubeview-auth
+      dataKey: auth
+      type: opaque

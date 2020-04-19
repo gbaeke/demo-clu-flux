@@ -1,0 +1,25 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: kubeview
+  namespace: default
+spec:
+  releaseName: kubeview
+  chart:
+    git: https://github.com/benc-uk/kubeview
+    path: deployments/helm/kubeview
+  values:
+    ingress:
+      enabled: true
+      annotations:
+        cert-manager.io/cluster-issuer: "letsencrypt-prod"
+        nginx.ingress.kubernetes.io/auth-type: basic
+        nginx.ingress.kubernetes.io/auth-secret: kubeview-auth
+
+      hosts:
+        - host: kubeview.baeke.info
+          paths: [ "/" ]
+      tls:
+        - secretName: kubeview-baeke-info-tls
+          hosts:
+            - kubeview.baeke.info
