@@ -78,7 +78,7 @@ spec:
         - templateName: realtime-analysis
         args:
         - name: service-name
-          value: realtimeappppp-preview.default.svc.cluster.local
+          value: realtimeapp-preview.default.svc.cluster.local
 ---
 apiVersion: v1
 kind: Service
