@@ -56,7 +56,7 @@ spec:
     spec:
       containers:
       - name: realtimeapp
-        image: gbaeke/fluxapp:1.0.0
+        image: gbaeke/fluxapp:1.0.2
         env:
         - name: REDISHOST
           value: "redisapp:6379"
@@ -73,7 +73,12 @@ spec:
     blueGreen:
       activeService: realtimeapp-active
       previewService: realtimeapp-preview
-      autoPromotionEnabled: false
+      prePromotionAnalysis:
+        templates:
+        - templateName: realtime-analysis
+        args:
+        - name: service-name
+          value: realtimeappppp-preview.default.svc.cluster.local
 ---
 apiVersion: v1
 kind: Service
@@ -109,12 +114,7 @@ metadata:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/affinity: cookie
     nginx.ingress.kubernetes.io/affinity-mode: persistent
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
-  tls:
-  - hosts:
-    - real.baeke.info
-    secretName: real-baeke-info-tls
   rules:
   - host: real.baeke.info
     http:

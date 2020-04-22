@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata:
+  name: realtime-analysis
+spec:
+  args:
+  - name: service-name
+  metrics:
+  - name: test-realtime
+    provider:
+      job:
+        backoffLimit: 1
+        spec:
+          template:
+            spec:
+              containers:
+              - name: curl
+                image: curlimages/curl:7.69.1
+                command: ['curl',  '{{args.service-name}}']
+              restartPolicy: Never
