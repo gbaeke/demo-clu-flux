@@ -98,10 +98,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - real.baeke.info
-    secretName: real-baeke-info-tls
+    - rt.baeke.info
+    secretName: rt-baeke-info-tls
   rules:
-  - host: real.baeke.info
+  - host: rt.baeke.info
     http:
       paths:
       - path: /

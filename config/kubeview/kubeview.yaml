@@ -20,6 +20,6 @@ spec:
         - host: kube.baeke.info
           paths: [ "/" ]
       tls:
-        - secretName: kubeview-baeke-info-tls
+        - secretName: kube-baeke-info-tls
           hosts:
             - kube.baeke.info
