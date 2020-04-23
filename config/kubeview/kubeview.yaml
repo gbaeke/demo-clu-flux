@@ -17,9 +17,9 @@ spec:
         nginx.ingress.kubernetes.io/auth-secret: kubeview-auth
 
       hosts:
-        - host: kubeview.baeke.info
+        - host: kube.baeke.info
           paths: [ "/" ]
       tls:
         - secretName: kubeview-baeke-info-tls
           hosts:
-            - kubeview.baeke.info
+            - kube.baeke.info

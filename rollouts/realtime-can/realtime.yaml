@@ -56,7 +56,7 @@ spec:
     spec:
       containers:
       - name: realtimeapp
-        image: gbaeke/fluxapp:1.0.0
+        image: gbaeke/fluxapp:1.0.2
         env:
         - name: REDISHOST
           value: "redisapp:6379"
@@ -73,14 +73,11 @@ spec:
     canary:
       stableService: realtimeapp-stable
       canaryService: realtimeapp-canary
-      trafficRouting:
-        nginx:
-          stableIngress: realtimeapp-ingress
+      #trafficRouting:
+        #nginx:
+          #stableIngress: realtimeapp-ingress
       steps:
-      - setWeight: 20
-      - pause:
-          duration: "1m"
-      - setWeight: 60
+      - setWeight: 50
       - pause: {}
 ---
 apiVersion: v1
@@ -117,14 +114,9 @@ metadata:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/affinity: cookie
     nginx.ingress.kubernetes.io/affinity-mode: persistent
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
-  tls:
-  - hosts:
-    - realtime.baeke.info
-    secretName: realtime-baeke-info-tls
   rules:
-  - host: realtime.baeke.info
+  - host: real.baeke.info
     http:
       paths:
       - path: /
