@@ -1,0 +1,31 @@
+apiVersion: flagger.app/v1beta1
+kind: Canary
+metadata:
+  name: realtime
+spec:
+  targetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: realtimeapp
+  service:
+    port: 80
+    targetPort: 8080
+  analysis:
+    interval: 1m
+    # max number of failed metrics to rollback
+    threshold: 5
+    # max percent of traffic to canary
+    maxWeight: 100
+    # weight of each steps
+    stepWeight: 20
+    metrics:
+      - name: request-success-rate
+        thresholdRange:
+          min: 99
+        interval: 1m
+    #webhooks:
+    #  - name: load-test
+    #    type: rollout
+    #    url: http://flagger-loadtester.default/
+    #    metadata:
+    #      cmd: "hey -z 5m -q 10 -c 10 http://realtimeapp-canary.default"

@@ -44,14 +44,11 @@ metadata:
   name: realtimeapp
   labels:
     app: realtimeapp
-  annotations:
-    fluxcd.io/automated: 'true'
-    fluxcd.io/tag.realtimeapp: semver:~1
 spec:
   selector:
     matchLabels:
       app: realtimeapp
-  replicas: 3
+  replicas: 2
   template:
     metadata:
       labels:
@@ -59,7 +56,7 @@ spec:
     spec:
       containers:
       - name: realtimeapp
-        image: gbaeke/fluxapp:1.0.0°
+        image: gbaeke/fluxapp:1.0.2
         env:
         - name: REDISHOST
           value: "redisapp:6379"
@@ -73,19 +70,6 @@ spec:
         ports:
         - containerPort: 8080
 ---
-apiVersion: v1
-kind: Service
-metadata:
-  name: realtimeapp
-  labels:
-    app: realtimeapp
-spec:
-  ports:
-  - port: 80
-    targetPort: 8080
-  selector:
-    app: realtime
----
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -94,17 +78,12 @@ metadata:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/affinity: cookie
     nginx.ingress.kubernetes.io/affinity-mode: persistent
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
-  tls:
-  - hosts:
-    - rt.baeke.info
-    secretName: rt-baeke-info-tls
   rules:
   - host: rt.baeke.info
     http:
       paths:
       - path: /
         backend:
-          serviceName: realtimeapp
+          serviceName: realtimeapp-primary
           servicePort: 80
