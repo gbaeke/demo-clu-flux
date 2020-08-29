@@ -59,11 +59,7 @@ spec:
     spec:
       containers:
       - name: realtimeapp
-<<<<<<< HEAD
-        image: gbaeke/fluxapp:1.0.0°
-=======
         image: gbaeke/fluxapp:1.2.0
->>>>>>> 90efef9c28aa592f6c276ed6ea8afdf817096cc3
         env:
         - name: REDISHOST
           value: "redisapp:6379"
