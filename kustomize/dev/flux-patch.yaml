@@ -13,7 +13,7 @@ spec:
       $setElementOrder/containers:
       - name: realtime
       containers:
-      - image: gbaeke/fluxapp:1.0.6
+      - image: gbaeke/fluxapp:1.2.0
         name: realtime
 ---
 apiVersion: extensions/v1beta1
